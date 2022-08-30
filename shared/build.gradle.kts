@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
+    id("org.jetbrains.kotlin.plugin.serialization") version ("1.6.20")
 }
 
 version = "1.0"
@@ -27,6 +28,7 @@ kotlin {
                 implementation(libs.coroutines.core)
                 implementation(libs.kotlinx.serialization.json)
                 implementation(libs.bundles.ktor.common)
+                api(libs.touchlab.kermit)
             }
         }
         val commonTest by getting {

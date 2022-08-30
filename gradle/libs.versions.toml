@@ -40,6 +40,8 @@ ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
 
 material = { module = "com.google.android.material:material", version.ref = "material" }
 
+touchlab-kermit = { module = "co.touchlab:kermit", version = "1.0.3" }
+
 [bundles]
 ktor-common = ["ktor-client-core", "ktor-client-logging", "ktor-client-serialization", "ktor-client-contentNegotiation"]
 

@@ -21,12 +21,12 @@ data class Launch(
     val dateUnix: Int,
     @SerialName("date_utc")
     val dateUtc: String,
-    @SerialName("details")
-    val details: Any,
-    @SerialName("failures")
-    val failures: List<Any>,
-    @SerialName("fairings")
-    val fairings: Fairings,
+//    @SerialName("details")
+//    val details: Any,
+//    @SerialName("failures")
+//    val failures: List<Any>,
+//    @SerialName("fairings")
+//    val fairings: Fairings,
     @SerialName("flight_number")
     val flightNumber: Int,
     @SerialName("id")
@@ -45,20 +45,20 @@ data class Launch(
     val payloads: List<String>,
     @SerialName("rocket")
     val rocket: String,
-    @SerialName("ships")
-    val ships: List<Any>,
-    @SerialName("static_fire_date_unix")
-    val staticFireDateUnix: Any,
-    @SerialName("static_fire_date_utc")
-    val staticFireDateUtc: Any,
-    @SerialName("success")
-    val success: Any,
+//    @SerialName("ships")
+//    val ships: List<Any>,
+//    @SerialName("static_fire_date_unix")
+//    val staticFireDateUnix: Any,
+//    @SerialName("static_fire_date_utc")
+//    val staticFireDateUtc: Any,
+//    @SerialName("success")
+//    val success: Any,
     @SerialName("tbd")
     val tbd: Boolean,
     @SerialName("upcoming")
     val upcoming: Boolean,
-    @SerialName("window")
-    val window: Any
+//    @SerialName("window")
+//    val window: Any
 )
 
 @Serializable
@@ -69,59 +69,59 @@ data class Core(
     val flight: Int,
     @SerialName("gridfins")
     val gridfins: Boolean,
-    @SerialName("landing_attempt")
-    val landingAttempt: Any,
-    @SerialName("landing_success")
-    val landingSuccess: Any,
-    @SerialName("landing_type")
-    val landingType: Any,
-    @SerialName("landpad")
-    val landpad: Any,
+//    @SerialName("landing_attempt")
+//    val landingAttempt: Any,
+//    @SerialName("landing_success")
+//    val landingSuccess: Any,
+//    @SerialName("landing_type")
+//    val landingType: Any,
+//    @SerialName("landpad")
+//    val landpad: Any,
     @SerialName("legs")
     val legs: Boolean,
     @SerialName("reused")
     val reused: Boolean
 )
 
-@Serializable
-data class Fairings(
-    @SerialName("recovered")
-    val recovered: Any,
-    @SerialName("recovery_attempt")
-    val recoveryAttempt: Any,
-    @SerialName("reused")
-    val reused: Any,
-    @SerialName("ships")
-    val ships: List<Any>
-)
+//@Serializable
+//data class Fairings(
+//    @SerialName("recovered")
+//    val recovered: Any,
+//    @SerialName("recovery_attempt")
+//    val recoveryAttempt: Any,
+//    @SerialName("reused")
+//    val reused: Any,
+//    @SerialName("ships")
+//    val ships: List<Any>
+//)
 
 @Serializable
 data class Links(
-    @SerialName("article")
-    val article: Any,
-    @SerialName("flickr")
-    val flickr: Flickr,
+//    @SerialName("article")
+//    val article: Any,
+//    @SerialName("flickr")
+//    val flickr: Flickr,
     @SerialName("patch")
     val patch: Patch,
-    @SerialName("presskit")
-    val presskit: Any,
+//    @SerialName("presskit")
+//    val presskit: Any,
     @SerialName("reddit")
     val reddit: Reddit,
     @SerialName("webcast")
     val webcast: String,
-    @SerialName("wikipedia")
-    val wikipedia: Any,
+//    @SerialName("wikipedia")
+//    val wikipedia: Any,
     @SerialName("youtube_id")
     val youtubeId: String
 )
 
-@Serializable
-data class Flickr(
-    @SerialName("original")
-    val original: List<Any>,
-    @SerialName("small")
-    val small: List<Any>
-)
+//@Serializable
+//data class Flickr(
+//    @SerialName("original")
+//    val original: List<Any>,
+//    @SerialName("small")
+//    val small: List<Any>
+//)
 
 @Serializable
 data class Patch(
@@ -135,10 +135,10 @@ data class Patch(
 data class Reddit(
     @SerialName("campaign")
     val campaign: String,
-    @SerialName("launch")
-    val launch: Any,
-    @SerialName("media")
-    val media: Any,
+//    @SerialName("launch")
+//    val launch: Any,
+//    @SerialName("media")
+//    val media: Any,
     @SerialName("recovery")
     val recovery: String
 )
