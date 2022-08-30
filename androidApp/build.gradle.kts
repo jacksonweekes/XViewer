@@ -24,4 +24,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
+    implementation(libs.ktor.client.okHttp)
+    implementation(libs.bundles.app.ui)
 }

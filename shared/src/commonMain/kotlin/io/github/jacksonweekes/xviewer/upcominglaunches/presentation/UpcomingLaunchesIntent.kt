@@ -1,4 +1,6 @@
 package io.github.jacksonweekes.xviewer.upcominglaunches.presentation
 
-class UpcomingLaunchesIntent {
+import io.github.jacksonweekes.xviewer.mvi.Intent
+
+class UpcomingLaunchesIntent: Intent {
 }

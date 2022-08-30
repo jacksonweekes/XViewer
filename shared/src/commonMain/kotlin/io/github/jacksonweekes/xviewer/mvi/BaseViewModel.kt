@@ -22,7 +22,7 @@ abstract class BaseViewModel<VS: ViewState, I: Intent, E: Effect>(initialState: 
 
     abstract fun onIntent(intent: I)
 
-    protected suspend fun applyEffect(effect: E) {
+    protected suspend fun updateViewState(effect: E) {
         effects.send(effect)
     }
 }
