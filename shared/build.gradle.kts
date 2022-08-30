@@ -26,6 +26,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(libs.coroutines.core)
+                implementation(libs.koin.core)
                 implementation(libs.kotlinx.serialization.json)
                 implementation(libs.bundles.ktor.common)
                 api(libs.touchlab.kermit)

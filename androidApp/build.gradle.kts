@@ -26,4 +26,5 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.ktor.client.okHttp)
     implementation(libs.bundles.app.ui)
+    implementation(libs.koin.android)
 }
