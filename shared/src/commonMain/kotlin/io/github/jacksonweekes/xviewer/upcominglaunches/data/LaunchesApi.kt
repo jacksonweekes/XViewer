@@ -15,11 +15,14 @@ import kotlinx.serialization.json.Json
 class LaunchesApi(engine: HttpClientEngine, log: KermitLogger) {
 
     private val client = HttpClient(engine) {
-        expectSuccess = true
+        //expectSuccess = true
         install(ContentNegotiation) {
-            Json {
-                ignoreUnknownKeys = true
-            }
+            json(
+                Json {
+                    prettyPrint = true
+                    ignoreUnknownKeys = true
+                }
+            )
         }
         install(Logging) {
             logger = object : Logger {

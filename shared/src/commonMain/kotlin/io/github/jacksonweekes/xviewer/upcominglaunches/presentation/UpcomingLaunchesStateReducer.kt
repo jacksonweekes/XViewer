@@ -6,8 +6,8 @@ import io.github.jacksonweekes.xviewer.mvi.ViewState
 class UpcomingLaunchesStateReducer: StateReducer<UpcomingLaunchesViewState, UpcomingLaunchesEffect>() {
     override fun reduce(viewState: UpcomingLaunchesViewState, effect: UpcomingLaunchesEffect): UpcomingLaunchesViewState =
         when (effect) {
-            is UpcomingLaunchesEffect.SetLaunches -> UpcomingLaunchesViewState.Success(effect.launches)
-            is UpcomingLaunchesEffect.ShowError -> UpcomingLaunchesViewState.Error
+            is UpcomingLaunchesEffect.SetLaunches -> UpcomingLaunchesViewState(effect.launches, isLoading = false, isError = false)
+            is UpcomingLaunchesEffect.ShowError -> viewState.copy(isError = true)
         }
 }
 

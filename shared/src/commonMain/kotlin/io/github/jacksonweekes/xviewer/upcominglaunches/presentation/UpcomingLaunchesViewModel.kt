@@ -4,10 +4,10 @@ import io.github.jacksonweekes.xviewer.mvi.BaseViewModel
 import io.github.jacksonweekes.xviewer.upcominglaunches.data.LaunchesRepository
 import kotlinx.coroutines.launch
 
-class UpcomingLaunchesViewModel(private val launchesRepository: LaunchesRepository) : BaseViewModel<
+class UpcomingLaunchesViewModel(private val launchesRepository: LaunchesRepository, stateReducer: UpcomingLaunchesStateReducer) : BaseViewModel<
         UpcomingLaunchesViewState,
         UpcomingLaunchesIntent,
-        UpcomingLaunchesEffect>(UpcomingLaunchesViewState.Loading, UpcomingLaunchesStateReducer()) {
+        UpcomingLaunchesEffect>(UpcomingLaunchesViewState(), stateReducer) {
 
     init {
         viewModelScope.launch {
