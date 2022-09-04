@@ -1,5 +1,10 @@
 package io.github.jacksonweekes.xviewer
 
+import co.touchlab.kermit.Logger
+import io.github.jacksonweekes.xviewer.mvi.BaseViewModel
+import io.github.jacksonweekes.xviewer.mvi.Effect
+import io.github.jacksonweekes.xviewer.mvi.Intent
+import io.github.jacksonweekes.xviewer.mvi.ViewState
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow
@@ -31,15 +36,24 @@ actual abstract class ViewModel {
     }
 }
 
-abstract class CallbackViewModel {
-    protected abstract val viewModel: ViewModel
+abstract class BaseCallbackViewModel<VS: ViewState, I: Intent, E: Effect>(private val logger: Logger) {
+    protected abstract val viewModel: BaseViewModel<VS, I, E>
+
+    val viewState: FlowAdapter<VS>
+    get() {
+        logger.v("Getting viewState FlowAdapter")
+        return viewModel.viewState.asCallbacks()
+    }
+
+    @Suppress("Unused") // Called from Swift
+    fun onIntent(intent: I) = viewModel.onIntent(intent)
+
+    @Suppress("Unused") // Called from Swift
+    fun clear() = (viewModel as ViewModel).clear()
 
     /**
      * Create a [FlowAdapter] from this [Flow] to make it easier to interact with from Swift.
      */
-    fun <T : Any> Flow<T>.asCallbacks() =
+    private fun <T : Any> Flow<T>.asCallbacks() =
         FlowAdapter(viewModel.viewModelScope, this)
-
-    @Suppress("Unused") // Called from Swift
-    fun clear() = viewModel.clear()
 }

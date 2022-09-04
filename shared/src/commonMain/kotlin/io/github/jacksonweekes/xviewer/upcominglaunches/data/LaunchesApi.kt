@@ -45,8 +45,8 @@ class LaunchesApi(engine: HttpClientEngine, log: KermitLogger) {
         client.get {
             url {
                 protocol = URLProtocol.HTTPS
-                host = "api.spacexdata.com/v4"
-                encodedPath = "launches/upcoming"
+                host = "api.spacexdata.com"
+                encodedPath = "v4/launches/upcoming"
             }
         }.body()
 }

@@ -42,7 +42,7 @@ private val coreModule = module {
     }
 
     single {
-        UpcomingLaunchesViewModel(get(), get())
+        UpcomingLaunchesViewModel(get(), get(), get())
     }
 
     single {

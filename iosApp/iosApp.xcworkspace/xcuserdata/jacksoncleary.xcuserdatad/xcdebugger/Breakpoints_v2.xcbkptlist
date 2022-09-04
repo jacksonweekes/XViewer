@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "50475005-0F54-4DA4-8EE6-2465FA048738"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A464A734-5E12-42D9-91EA-868028D58F39"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../shared/src/commonMain/kotlin/io/github/jacksonweekes/xviewer/upcominglaunches/data/LaunchesApi.kt"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "A464A734-5E12-42D9-91EA-868028D58F39 - 95fd436e8bab6b46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "kfun:io.github.jacksonweekes.xviewer.upcominglaunches.data.LaunchesApi.$getUpcomingLaunchesCOROUTINE$0#&lt;init&gt;(io.github.jacksonweekes.xviewer.upcominglaunches.data.LaunchesApi;kotlin.coroutines.Continuation&lt;kotlin.collections.List&lt;io.github.jacksonweekes.xviewer.upcominglaunches.data.Launch&gt;&gt;){}"
+                  moduleName = "iosApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacksoncleary/dev/AndroidStudioProjects/XViewer/shared/src/commonMain/kotlin/io/github/jacksonweekes/xviewer/upcominglaunches/data/LaunchesApi.kt"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "A464A734-5E12-42D9-91EA-868028D58F39 - 73604f9aee66bd69"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "kfun:io.github.jacksonweekes.xviewer.upcominglaunches.data.LaunchesApi.$getUpcomingLaunchesCOROUTINE$0#invokeSuspend(kotlin.Result&lt;kotlin.Any?&gt;){}kotlin.Any?"
+                  moduleName = "iosApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacksoncleary/dev/AndroidStudioProjects/XViewer/shared/src/commonMain/kotlin/io/github/jacksonweekes/xviewer/upcominglaunches/data/LaunchesApi.kt"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "604">
+               </Location>
+               <Location
+                  uuid = "A464A734-5E12-42D9-91EA-868028D58F39 - 9b50fa1164849e19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "kfun:io.github.jacksonweekes.xviewer.upcominglaunches.data.LaunchesApi#getUpcomingLaunches(){}kotlin.collections.List&lt;io.github.jacksonweekes.xviewer.upcominglaunches.data.Launch&gt;"
+                  moduleName = "iosApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jacksoncleary/dev/AndroidStudioProjects/XViewer/shared/src/commonMain/kotlin/io/github/jacksonweekes/xviewer/upcominglaunches/data/LaunchesApi.kt"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "240">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20ED4FD7-B08B-4BFD-9CE1-E072B1008DC3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../shared/src/commonMain/kotlin/io/github/jacksonweekes/xviewer/upcominglaunches/presentation/UpcomingLaunchesViewModel.kt"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

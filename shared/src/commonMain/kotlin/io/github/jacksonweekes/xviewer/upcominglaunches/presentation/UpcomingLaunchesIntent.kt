@@ -2,5 +2,6 @@ package io.github.jacksonweekes.xviewer.upcominglaunches.presentation
 
 import io.github.jacksonweekes.xviewer.mvi.Intent
 
-class UpcomingLaunchesIntent: Intent {
+sealed class UpcomingLaunchesIntent: Intent {
+    object Refresh: UpcomingLaunchesIntent()
 }
