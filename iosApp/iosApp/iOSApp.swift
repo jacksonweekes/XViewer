@@ -4,7 +4,8 @@ import shared
 @main
 struct iOSApp: App {
     init() {
-        KoinIOSKt.doInitKoinIos()
+        let userDefaults = UserDefaults(suiteName: "XViewerPreferences")!
+        KoinIOSKt.doInitKoinIos(userDefaults: userDefaults)
     }
     
 	var body: some Scene {

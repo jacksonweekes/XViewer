@@ -7,14 +7,16 @@ import io.github.jacksonweekes.xviewer.upcominglaunches.data.LaunchesApi
 import io.github.jacksonweekes.xviewer.upcominglaunches.data.LaunchesRepository
 import io.github.jacksonweekes.xviewer.upcominglaunches.presentation.UpcomingLaunchesStateReducer
 import io.github.jacksonweekes.xviewer.upcominglaunches.presentation.UpcomingLaunchesViewModel
+import kotlinx.datetime.Clock
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
-fun initKoin(): KoinApplication {
+fun initKoin(appModule: Module): KoinApplication {
     val koinApplication = startKoin {
         modules(
+            appModule,
             coreModule,
             platformModule
         )
@@ -34,7 +36,7 @@ private val coreModule = module {
     }
 
     single {
-        LaunchesRepository(get())
+        LaunchesRepository(get(), get(), get(), get())
     }
 
     single {
@@ -47,6 +49,10 @@ private val coreModule = module {
 
     single {
         UpcomingLaunchesStateReducer()
+    }
+
+    single<Clock> {
+        Clock.System
     }
 }
 

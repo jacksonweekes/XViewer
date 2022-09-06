@@ -27,8 +27,10 @@ kotlin {
             dependencies {
                 implementation(libs.coroutines.core)
                 implementation(libs.koin.core)
-                //implementation(libs.kotlinx.serialization.json)
+                implementation(libs.kotlinx.serialization.json)
                 implementation(libs.bundles.ktor.common)
+                implementation(libs.multiplatformSettings.common)
+                implementation(libs.kotlinx.dateTime)
                 api(libs.touchlab.kermit)
             }
         }
