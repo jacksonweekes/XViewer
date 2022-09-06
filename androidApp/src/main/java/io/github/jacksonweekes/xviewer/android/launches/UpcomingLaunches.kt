@@ -9,6 +9,7 @@ import androidx.compose.runtime.collectAsState
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import io.github.jacksonweekes.xviewer.upcominglaunches.data.Launch
+import io.github.jacksonweekes.xviewer.upcominglaunches.presentation.UpcomingLaunchesIntent
 import io.github.jacksonweekes.xviewer.upcominglaunches.presentation.UpcomingLaunchesViewModel
 import io.github.jacksonweekes.xviewer.upcominglaunches.presentation.UpcomingLaunchesViewState
 
@@ -16,13 +17,15 @@ import io.github.jacksonweekes.xviewer.upcominglaunches.presentation.UpcomingLau
 fun UpcomingLaunchesScreen(viewModel: UpcomingLaunchesViewModel) {
     val uiState = viewModel.viewState.collectAsState()
 
-    Content(uiState.value)
+    Content(uiState.value) {
+        viewModel.onIntent(UpcomingLaunchesIntent.Refresh)
+    }
 }
 
 @Composable
-fun Content(uiState: UpcomingLaunchesViewState) {
+fun Content(uiState: UpcomingLaunchesViewState, onRefresh: () -> Unit) {
     SwipeRefresh(state = rememberSwipeRefreshState(isRefreshing = uiState.isLoading),
-        onRefresh = { /*TODO*/ }) {
+        onRefresh = onRefresh) {
         if (uiState.launches.isNotEmpty()) {
             Success(launches = uiState.launches)
         }

@@ -6,5 +6,8 @@ import io.github.jacksonweekes.xviewer.upcominglaunches.presentation.UpcomingLau
 import io.github.jacksonweekes.xviewer.upcominglaunches.presentation.UpcomingLaunchesViewModel
 import io.github.jacksonweekes.xviewer.upcominglaunches.presentation.UpcomingLaunchesViewState
 
-class UpcomingLaunchesCallbackViewModel(override val viewModel: UpcomingLaunchesViewModel, logger: Logger) :
-    BaseCallbackViewModel<UpcomingLaunchesViewState, UpcomingLaunchesIntent, UpcomingLaunchesEffect>(logger)
+class UpcomingLaunchesCallbackViewModel(viewModel: UpcomingLaunchesViewModel, logger: Logger)
+    : BaseCallbackViewModel<UpcomingLaunchesViewState, UpcomingLaunchesIntent, UpcomingLaunchesEffect>(viewModel, logger) {
+    @Suppress("Unused") // Called from Swift673046
+    fun refreshLaunchData() = onIntent(UpcomingLaunchesIntent.Refresh)
+}

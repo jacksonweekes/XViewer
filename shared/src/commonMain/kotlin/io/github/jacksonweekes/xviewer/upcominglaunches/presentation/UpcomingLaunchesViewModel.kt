@@ -8,15 +8,22 @@ import kotlinx.coroutines.launch
 class UpcomingLaunchesViewModel(
     private val launchesRepository: LaunchesRepository,
     stateReducer: UpcomingLaunchesStateReducer,
-    logger: Logger
+    private val logger: Logger
 ) : BaseViewModel<
         UpcomingLaunchesViewState,
         UpcomingLaunchesIntent,
         UpcomingLaunchesEffect>(UpcomingLaunchesViewState(), stateReducer, logger) {
 
     init {
+        loadLaunchData()
+    }
+
+    override fun onIntent(intent: UpcomingLaunchesIntent) = when (intent) {
+        UpcomingLaunchesIntent.Refresh -> loadLaunchData()
+    }
+
+    private fun loadLaunchData() {
         viewModelScope.launch {
-            logger.v("Launched init job")
             try {
                 val launches = launchesRepository.getUpcomingLaunches()
                 updateViewState(UpcomingLaunchesEffect.SetLaunches(launches))
@@ -25,9 +32,5 @@ class UpcomingLaunchesViewModel(
                 updateViewState(UpcomingLaunchesEffect.ShowError)
             }
         }
-    }
-
-    override fun onIntent(intent: UpcomingLaunchesIntent) {
-        TODO("Not yet implemented")
     }
 }

@@ -36,9 +36,7 @@ actual abstract class ViewModel {
     }
 }
 
-abstract class BaseCallbackViewModel<VS: ViewState, I: Intent, E: Effect>(private val logger: Logger) {
-    protected abstract val viewModel: BaseViewModel<VS, I, E>
-
+abstract class BaseCallbackViewModel<VS: ViewState, I: Intent, E: Effect>(private val viewModel: BaseViewModel<VS, I, E>, private val logger: Logger) {
     val viewState: FlowAdapter<VS>
     get() {
         logger.v("Getting viewState FlowAdapter")

@@ -7,7 +7,7 @@ class UpcomingLaunchesStateReducer: StateReducer<UpcomingLaunchesViewState, Upco
     override fun reduce(viewState: UpcomingLaunchesViewState, effect: UpcomingLaunchesEffect): UpcomingLaunchesViewState =
         when (effect) {
             is UpcomingLaunchesEffect.SetLaunches -> UpcomingLaunchesViewState(effect.launches, isLoading = false, isError = false)
-            is UpcomingLaunchesEffect.ShowError -> viewState.copy(isError = true)
+            is UpcomingLaunchesEffect.ShowError -> UpcomingLaunchesViewState(isLoading = false, isError = true)
         }
 }
 

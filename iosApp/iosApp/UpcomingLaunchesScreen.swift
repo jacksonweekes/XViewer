@@ -3,7 +3,7 @@ import shared
 import Combine
 
 class ObservableUpcomingLaunchesViewModel: ObservableObject {
-    private var viewModel: UpcomingLaunchesViewModel?
+    private var viewModel: UpcomingLaunchesCallbackViewModel?
     
     @Published
     var loading = false
@@ -25,6 +25,8 @@ class ObservableUpcomingLaunchesViewModel: ObservableObject {
             self?.error = viewState.isError
             self?.upcomingLaunches = viewState.launches
         }.store(in: &cancellables)
+        
+        self.viewModel = viewModel
     }
     
     func deactivate() {
@@ -33,6 +35,11 @@ class ObservableUpcomingLaunchesViewModel: ObservableObject {
 
         viewModel?.clear()
         viewModel = nil
+    }
+    
+    func refresh() {
+        
+        viewModel?.refreshLaunchData()
     }
 }
 
@@ -46,7 +53,8 @@ struct UpcomingLaunchesScreen: View {
         UpcomingLaunchesContent(
             upcomingLaunches: observableModel.upcomingLaunches,
             loading: observableModel.loading,
-            error: observableModel.error
+            error: observableModel.error,
+            refresh: observableModel.refresh
         )
         .onAppear(perform: {
             observableModel.activate()
@@ -61,6 +69,7 @@ struct UpcomingLaunchesContent: View {
     var upcomingLaunches: [Launch]?
     var loading: Bool
     var error: Bool
+    var refresh: () -> Void
     
     var body: some View {
         ZStack {
@@ -75,6 +84,9 @@ struct UpcomingLaunchesContent: View {
                 }
                 if error {
                     Error()
+                }
+                Button("Refresh") {
+                    refresh()
                 }
             }
         }
